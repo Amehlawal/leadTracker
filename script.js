@@ -5,12 +5,19 @@ const ulEl = document.getElementById('ul-el')
 
 const inputBtn = document.getElementById('input-btn')
 const deleteBtn = document.getElementById('delete-btn')
+const tabBtn = document.getElementById('tab-btn')
 
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }    
+const tabs = [
+    {url: 'https://www.google.com'}
+]
+tabBtn.addEventListener('click', function () {
+    console.log(tabs[0].url)
+})
 function render(leads){
     let listItems = ""
 
